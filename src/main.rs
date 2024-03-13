@@ -27,6 +27,6 @@ mod tests {
         let res_y = FEE::new_base("18509D22F2107B667A8F75DE737A4FB967F6C3E745A7C2361868515402318F006BD360B8A8763D7844381C6E510799CC");
         let expected_pk = bls12_381::curve::BLS12381Curve::create_point_from_affine(res_x, res_y).unwrap();
 
-        assert_eq!(expected_pk, pk, "Test public key derivation");
+        assert_eq!(expected_pk, pk, "this ain't it man");
     }
 }
