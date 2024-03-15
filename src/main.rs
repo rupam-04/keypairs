@@ -7,8 +7,14 @@ type FEE = FieldElement<BLS12381PrimeField>;
 
 fn main() {
     let gen = bls12_381::curve::BLS12381Curve::generator();
-    let sk = 7809643498195481456u64;
-    let pk = gen.operate_with_self(sk);
+    let secret_key = 7809643498195481456u64;
+    let public_key = gen.operate_with_self(secret_key);
+
+    let public_key_affine = public_key.to_affine();
+    let public_key_x = public_key_affine.x();
+    let public_key_y = public_key_affine.y();
+    println!("Public key x coordinate: {}", public_key_x);
+    println!("Public key y coordinate: {}", public_key_y);
 }
 
 #[cfg(test)]
